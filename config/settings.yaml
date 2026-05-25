@@ -1,0 +1,7 @@
+input_dir: "data/input"
+output_dir: "data/output"
+expected_prefixes:
+  - products
+  - region
+  - sales
+  - reseller
