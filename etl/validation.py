@@ -1,15 +1,20 @@
+import pandas as pd
+import logging
 
-from great_expectations.dataset import PandasDataset
-
+logger = logging.getLogger(__name__)
 def validate_model(df):
-    ds = PandasDataset(df)
-    
-    ds.expect_column_values_to_not_be_null("ResellerKey")
-    ds.expect_column_values_to_not_be_null("ProductKey")
-    ds.expect_column_values_to_not_be_null("SalesTerritoryKey")
-    ds.expect_column_values_to_be_between("Quantity", min_value=1)
-    ds.expect_column_values_to_be_between("Unit Price", min_value=0)
+    logger.info("Validating model...")
 
-    result = ds.validate()
-    if not result["success"]:
-        raise ValueError(f"Data validation failed: {result}")
+    if df["ResellerKey"].isnull().any():
+        raise ValueError("ResellerKey contains null values")
+    if df["ProductKey"].isnull().any():
+        raise ValueError("ProductKey contains null values")
+    if df["SalesTerritoryKey"].isnull().any():
+        raise ValueError("SalesTerritoryKey contains null values")
+    if (df["Quantity"] < 1).any():
+        raise ValueError("Quantity contains values less than 1")
+    if (df["Unit Price"] < 0).any():
+        raise ValueError("Unit Price contains values less than 0")
+
+    logger.info("Validation passed successfully")
+
