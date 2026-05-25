@@ -4,7 +4,7 @@ from datetime import datetime
 
 DATE_PATTERN = re.compile(r"_(\d{8})\.csv$")
 
-def find_latest_file(directory: str, prefix: str) -> Path | None:
+def find_latest_file(directory, prefix):
 
     dir_path = Path(directory)
     files = list(dir_path.glob(f"{prefix}_*.csv"))

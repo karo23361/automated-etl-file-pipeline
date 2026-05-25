@@ -7,7 +7,7 @@ from etl.validation import validate_model
 from etl.load import save_model
 from etl.notifications import notify_error
 
-logging.basicCondifig(
+logging.basicConfig(
     filename="logs/etl.log",
     level=logging.INFO,
     format="%(asctime)s %(levelname)s %(name)s - %(message)s",
