@@ -24,9 +24,20 @@ This project is a small, modular ETL pipeline built in Python. Its purpose is to
 
 - Load - The final dataset is saved to the output directory defined in the configuration file.
 
-<h2> Scheduling </h2>
-On Linux, the pipeline can be scheduled using cron.
+<h2> Databricks Automation </h2>
+The pipeline can also be automated in a Databricks environment.
+The project repository is connected to Databricks Repos, and a small notebook is used to trigger the Python ETL script. A Databricks Job executes this notebook on a defined schedule, providing orchestration, logging, and monitoring.
 
-``` 0 6 * * * python /etl/main_etl.py ```
+Setup includes:
 
-This runs the ETL every day at 06:00.
+- Databricks Repo containing the ETL project
+
+- Lightweight notebook that installs dependencies and runs the main Python script
+
+- Databricks Job configured to execute the notebook
+
+- Daily schedule (for example, 06:00)
+
+- Access to input and output directories stored in Databricks Volumes
+
+This approach demonstrates how a local Python ETL can be operationalized in a cloud environment using Databricks Workflows, without the need for additional compute services or external schedulers.
