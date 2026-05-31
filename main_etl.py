@@ -13,8 +13,8 @@ logging.basicConfig(
     format="%(asctime)s %(levelname)s %(name)s - %(message)s",
 )
 
-INPUT_DIR = "data/input"
-OUTPUT_DIR = "data/output"
+INPUT_DIR = "/Volumes/workspace/data/etl-file-storage/input"
+OUTPUT_DIR = "/Volumes/workspace/data/etl-file-storage/output"
 
 def run():
     logger = logging.getLogger("main_etl")
