@@ -28,6 +28,9 @@ This project is a small, modular ETL pipeline built in Python. Its purpose is to
 The pipeline can also be automated in a Databricks environment.
 The project repository is connected to Databricks Repos, and a small notebook is used to trigger the Python ETL script. A Databricks Job executes this notebook on a defined schedule, providing orchestration, logging, and monitoring.
 
+<img width="1022" height="592" alt="image" src="https://github.com/user-attachments/assets/38892f47-bd32-4d77-90a1-e488bc3bde44" />
+
+
 Setup includes:
 
 - Databricks Repo containing the ETL project
