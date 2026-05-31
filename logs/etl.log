@@ -105,3 +105,7 @@ TypeError: '<' not supported between instances of 'str' and 'int'
 2026-05-25 18:43:41,021 INFO etl.validation - Validating model...
 2026-05-25 18:43:41,021 INFO etl.validation - Validation passed successfully
 2026-05-25 18:43:41,503 INFO main_etl - ETL completed successfully
+2026-05-31 16:12:56,632 INFO main_etl - Start ETL
+2026-05-31 16:13:00,892 INFO etl.validation - Validating model...
+2026-05-31 16:13:00,894 INFO etl.validation - Validation passed successfully
+2026-05-31 16:13:02,313 INFO main_etl - ETL completed successfully
